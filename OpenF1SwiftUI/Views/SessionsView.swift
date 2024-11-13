@@ -13,7 +13,7 @@ struct SessionsView: View {
     
     var body: some View {
         VStack {
-           TopBar()
+            TopBar()
             
             HStack {
                 TextField("Year", text: $year)

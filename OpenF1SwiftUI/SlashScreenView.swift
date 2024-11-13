@@ -17,18 +17,18 @@ struct SlashScreenView: View {
             ContentView()
         }else{
             ZStack{
-                    Image("HDWallpaper")
+                Image("HDWallpaper")
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
-
-                }.onAppear{
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
-                        withAnimation{
-                            self.isActive = true
-                        }
+                
+            }.onAppear{
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
+                    withAnimation{
+                        self.isActive = true
                     }
                 }
+            }
         }
     }
 }

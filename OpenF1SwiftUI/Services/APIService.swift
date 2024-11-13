@@ -35,7 +35,15 @@ class APIService {
         let queryItems = [
             URLQueryItem(name: "year", value: String(year)),
             URLQueryItem(name: "country_code", value: country_code),
-
+            
+        ]
+        performRequest(endpoint: endpoint, queryItems: queryItems, completion: completion)
+    }
+    
+    func fetchSessionsDateNow(year: Int, completion: @escaping (Result<[Session], Error>) -> Void) {
+        let endpoint = "/sessions"
+        let queryItems = [
+            URLQueryItem(name: "year", value: String(year)),
         ]
         performRequest(endpoint: endpoint, queryItems: queryItems, completion: completion)
     }
@@ -49,12 +57,15 @@ class APIService {
         performRequest(endpoint: endpoint, queryItems: queryItems, completion: completion)
     }
     
-    func fetchCarData(driverNumber: Int, sessionKey: Int, completion: @escaping (Result<[CarData], Error>) -> Void) {
+    func fetchCarData(driverNumber: Int, sessionKey: Int, minSpeed: Int, completion: @escaping (Result<[CarData], Error>) -> Void) {
         let endpoint = "/car_data"
         let queryItems = [
             URLQueryItem(name: "driver_number", value: String(driverNumber)),
-            URLQueryItem(name: "session_key", value: String(sessionKey))
+            URLQueryItem(name: "session_key", value: String(sessionKey)),
+            URLQueryItem(name: "speed", value: String(minSpeed)),
         ]
+        //let speedQueryString = "speed>=\(minSpeed)"
+
         performRequest(endpoint: endpoint, queryItems: queryItems, completion: completion)
     }
     
@@ -63,14 +74,14 @@ class APIService {
             completion(.failure(APIError.invalidURL))
             return
         }
-        
+                
         urlComponents.queryItems = queryItems
-        
+                
         guard let url = urlComponents.url else {
             completion(.failure(APIError.invalidURL))
             return
         }
-        
+        print("URL : \(url)")
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 completion(.failure(error))

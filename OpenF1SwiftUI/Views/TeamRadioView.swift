@@ -9,27 +9,27 @@ import AVKit
 
 struct TeamRadioView: View {
     @State private var date = "2024-02-29"
-       @State private var driverNumber = "4"
-       @StateObject private var viewModel = TeamRadioViewModel()
-       @State private var audioPlayer: AVPlayer?
+    @State private var driverNumber = "4"
+    @StateObject private var viewModel = TeamRadioViewModel()
+    @State private var audioPlayer: AVPlayer?
     
     var body: some View {
         VStack {
-           TopBar()
+            TopBar()
             
             HStack {
                 TextField("Date (YYYY-MM-DD)", text: $date)
-                           .textFieldStyle(RoundedBorderTextFieldStyle())
-                           .keyboardType(.numberPad)
-                           .onChange(of: date) { newValue in
-                               date = formatDateString(newValue)
-                           }
-                            
-                            TextField("Driver Number", text: $driverNumber)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .keyboardType(.numberPad)
-                        }
-                        .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.numberPad)
+                    .onChange(of: date) { newValue in
+                        date = formatDateString(newValue)
+                    }
+                
+                TextField("Driver Number", text: $driverNumber)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.numberPad)
+            }
+            .padding()
             
             Button("Valider") {
                 viewModel.fetchTeamRadio(date: date, driverNumber: Int(driverNumber) ?? 11)
@@ -37,8 +37,8 @@ struct TeamRadioView: View {
             .padding()
             
             List(viewModel.teamRadios) { radio in
-                           TeamRadioRow(radio: radio, audioPlayer: $audioPlayer)
-                       }
+                TeamRadioRow(radio: radio, audioPlayer: $audioPlayer)
+            }
             
             Spacer()
             BottomBar(currentView: "TeamRadio")
@@ -48,21 +48,21 @@ struct TeamRadioView: View {
         .environment(\.navigationTitle, "Team Radio")
     }
     private func formatDateString(_ input: String) -> String {
-            let numbers = input.filter { $0.isNumber }
-            var formatted = ""
-            
-            for (index, number) in numbers.enumerated() {
-                if index == 4 || index == 6 {
-                    formatted += "-"
-                }
-                formatted += String(number)
-                if formatted.count == 10 {
-                    break
-                }
+        let numbers = input.filter { $0.isNumber }
+        var formatted = ""
+        
+        for (index, number) in numbers.enumerated() {
+            if index == 4 || index == 6 {
+                formatted += "-"
             }
-            
-            return formatted
+            formatted += String(number)
+            if formatted.count == 10 {
+                break
+            }
         }
+        
+        return formatted
+    }
 }
 
 struct TeamRadioRow: View {
@@ -72,7 +72,7 @@ struct TeamRadioRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
-                Text("Driver 🏎#\(radio.driverNumber)")
+                Text("Driver 🏎 #\(radio.driverNumber)")
                     .font(.headline)
                     .foregroundColor(.primary)
                 Spacer()

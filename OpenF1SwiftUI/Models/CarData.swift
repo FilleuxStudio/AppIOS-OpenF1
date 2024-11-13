@@ -7,7 +7,8 @@
 
 import Foundation
 
-class CarData: Codable {
+class CarData: Codable, Identifiable {
+    let id = UUID() 
     let brake: Int
     let date: Date
     let driverNumber: Int

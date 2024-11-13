@@ -24,20 +24,20 @@ class TeamRadio: Codable, Identifiable {
     }
     
     /*required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        
-        let dateString = try container.decode(String.self, forKey: .date)
-        let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
-        if let decodedDate = formatter.date(from: dateString) {
-            date = decodedDate
-        } else {
-            throw DecodingError.dataCorruptedError(forKey: .date, in: container, debugDescription: "Date string does not match expected format")
-        }
-        
-        driverNumber = try container.decode(Int.self, forKey: .driverNumber)
-        meetingKey = try container.decode(Int.self, forKey: .meetingKey)
-        recordingURL = try container.decode(URL.self, forKey: .recordingURL)
-        sessionKey = try container.decode(Int.self, forKey: .sessionKey)
-    }*/
+     let container = try decoder.container(keyedBy: CodingKeys.self)
+     
+     let dateString = try container.decode(String.self, forKey: .date)
+     let formatter = ISO8601DateFormatter()
+     formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+     if let decodedDate = formatter.date(from: dateString) {
+     date = decodedDate
+     } else {
+     throw DecodingError.dataCorruptedError(forKey: .date, in: container, debugDescription: "Date string does not match expected format")
+     }
+     
+     driverNumber = try container.decode(Int.self, forKey: .driverNumber)
+     meetingKey = try container.decode(Int.self, forKey: .meetingKey)
+     recordingURL = try container.decode(URL.self, forKey: .recordingURL)
+     sessionKey = try container.decode(Int.self, forKey: .sessionKey)
+     }*/
 }

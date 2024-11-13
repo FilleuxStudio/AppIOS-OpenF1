@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		277BAA7F2CBFE1B400C730D4 /* CarDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277BAA7E2CBFE1A200C730D4 /* CarDataViewModel.swift */; };
+		277BAA812CBFE41500C730D4 /* CarDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277BAA802CBFE41500C730D4 /* CarDataView.swift */; };
 		ECFA8BE02C99637E00483E85 /* OpenF1SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFA8BDF2C99637E00483E85 /* OpenF1SwiftUIApp.swift */; };
 		ECFA8BE22C99637E00483E85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFA8BE12C99637E00483E85 /* ContentView.swift */; };
 		ECFA8BE42C99638000483E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECFA8BE32C99638000483E85 /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		277BAA7E2CBFE1A200C730D4 /* CarDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDataViewModel.swift; sourceTree = "<group>"; };
+		277BAA802CBFE41500C730D4 /* CarDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDataView.swift; sourceTree = "<group>"; };
 		ECFA8BDC2C99637E00483E85 /* OpenF1SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenF1SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFA8BDF2C99637E00483E85 /* OpenF1SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenF1SwiftUIApp.swift; sourceTree = "<group>"; };
 		ECFA8BE12C99637E00483E85 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				ECFA8BF62C99684900483E85 /* ListView.swift */,
 				ECFA8C082C99862100483E85 /* SessionsView.swift */,
 				ECFA8C1B2C99BBD900483E85 /* TeamRadioView.swift */,
+				277BAA802CBFE41500C730D4 /* CarDataView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 		ECFA8BEF2C9964DE00483E85 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				277BAA7E2CBFE1A200C730D4 /* CarDataViewModel.swift */,
 				ECFA8C022C996B5200483E85 /* F1ViewModel.swift */,
 				ECFA8C0E2C9988F000483E85 /* SessionViewModel.swift */,
 				ECFA8C1D2C99BD9700483E85 /* TeamRadioViewModel.swift */,
@@ -242,6 +248,7 @@
 				ECFA8BF52C99676600483E85 /* BottomBar.swift in Sources */,
 				ECFA8BE22C99637E00483E85 /* ContentView.swift in Sources */,
 				ECFA8C1C2C99BBD900483E85 /* TeamRadioView.swift in Sources */,
+				277BAA812CBFE41500C730D4 /* CarDataView.swift in Sources */,
 				ECFA8BF72C99684900483E85 /* ListView.swift in Sources */,
 				ECFA8BFD2C996A3E00483E85 /* Session.swift in Sources */,
 				ECFA8C032C996B5200483E85 /* F1ViewModel.swift in Sources */,
@@ -253,6 +260,7 @@
 				ECFA8BF32C99656300483E85 /* TopBar.swift in Sources */,
 				ECFA8C1E2C99BD9700483E85 /* TeamRadioViewModel.swift in Sources */,
 				ECFA8C052C996CC400483E85 /* APIService.swift in Sources */,
+				277BAA7F2CBFE1B400C730D4 /* CarDataViewModel.swift in Sources */,
 				ECFA8BE02C99637E00483E85 /* OpenF1SwiftUIApp.swift in Sources */,
 				ECFA8C072C99726F00483E85 /* ColorExtension.swift in Sources */,
 			);

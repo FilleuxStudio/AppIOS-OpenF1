@@ -12,17 +12,18 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-                VStack {
-                    TopBar()
-                    ListView(drivers: viewModel.drivers)
-                    Spacer()
-                    BottomBar(currentView: "Driver")
-                }
-                .navigationBarHidden(true)
-                .environment(\.navigationTitle, "F1 News")
+            VStack {
+                TopBar()
+                //                    ListView(drivers: viewModel.drivers)
+                ListView()
+                Spacer()
+                BottomBar(currentView: "Driver")
             }
+            .navigationBarHidden(true)
+            .environment(\.navigationTitle, "F1 News")
+        }
         .onAppear {
-            viewModel.fetchData()
+            viewModel.fetchDriver(session: "")
         }
     }
 }
